@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111111"><title>Admin — LOST HALIDE</title><link rel="stylesheet" href="styles.css"><script defer src="app.js"></script></head>
+<body data-page="admin">
+<header class="header"><a class="logo" href="index.html">LOST <span>HALIDE</span></a><a class="back-link" href="index.html">← VIEW WEBSITE</a></header>
+<main class="admin-main">
+  <p class="eyebrow">CONTENT MANAGEMENT · PROTOTYPE</p><h1>Manage your<br><em>archive.</em></h1>
+  <p class="intro">เพิ่มภาพจากคอมพิวเตอร์หรือมือถือได้ เลือกภาพจากอุปกรณ์ แล้วใส่รายละเอียดก่อนบันทึก</p>
+  <form id="uploadForm" class="upload-panel">
+    <label class="dropzone" for="photoFiles"><span class="upload-icon">↑</span><strong>เลือกภาพผลงาน</strong><span>กดเพื่อเลือกไฟล์จากคอมพิวเตอร์หรือมือถือ</span><small>รองรับ JPG, PNG, WebP · เลือกได้หลายภาพ</small><input id="photoFiles" type="file" accept="image/*" multiple required></label>
+    <div id="selectedPreview" class="selected-preview" aria-live="polite"></div>
+    <div class="form-grid">
+      <label>ชื่อผลงาน<input id="photoTitle" type="text" placeholder="เช่น Last Train"></label>
+      <label>หมวดหมู่<select id="photoCategory"><option>Street</option><option>Film Photography</option><option>Travel</option><option>Daily Life</option><option>Architecture</option><option>Other</option></select></label>
+      <label>ชนิดฟิล์ม / กล้อง<input id="photoFilm" type="text" placeholder="เช่น LUCKY 400 Black (ไม่บังคับ)"></label>
+      <label>สถานที่ / ปี<input id="photoLocation" type="text" placeholder="เช่น Bangkok · 2026 (ไม่บังคับ)"></label>
+    </div>
+    <label class="full-label">คำบรรยาย<textarea id="photoDescription" rows="3" placeholder="เขียนบันทึกเกี่ยวกับภาพนี้ (ไม่บังคับ)"></textarea></label>
+    <button class="primary-button" type="submit">บันทึกลงคลังภาพ</button>
+    <p class="notice">ต้นแบบนี้บันทึกภาพไว้ในเบราว์เซอร์ของอุปกรณ์นี้เท่านั้น ยังไม่ซิงก์ไปยังผู้เข้าชมคนอื่นหรืออุปกรณ์อื่น</p>
+    <p id="uploadStatus" class="status" role="status"></p>
+  </form>
+  <section class="admin-list-section"><div class="section-head"><div><p class="eyebrow">YOUR CONTENT</p><h2>ภาพที่บันทึกไว้</h2></div><span id="adminCount" class="count">0 ITEMS</span></div><div id="adminGrid" class="admin-grid"></div></section>
+</main>
+<footer><a class="logo" href="index.html">LOST <span>HALIDE</span></a><span>ADMIN PROTOTYPE</span><a href="index.html">View website ↗</a></footer>
+</body></html>
